@@ -1,16 +1,24 @@
 # projet
 
-MIAGED
+Projet MIAGED, réalisé dans le cadre du master 2 Intense (2021-2022) par François Hardy
 
-## Getting Started
+## Fonctionnalités
 
-This project is a starting point for a Flutter application.
+Le MVP est 100% fonctionnel
 
-A few resources to get you started if this is your first Flutter project:
+Voici la liste de ce qui a été ajouté :
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Le bouton "Mot de passe oublié", qui n'est pas développé, affiche seulement une pop-up
+Des cadres pour le login/mot de passe
+Une vérification de ce que l'utilisateur a entré (limitation de caractères)
+Une pop-up indiquant si les identifiants sont incorrects
+Un bouton permettant de créer son compte
+Un chargement avant d'afficher la page, une fois que l'utilisateur a cliqué sur "Se connecter"
+Les images sur chaque produits
+Une gestion des informations manquantes dans les produits (voir le produit "Echarpe")
+Un bouton d'action, permettant d'ajouter un vetement (implementation manquante: ajout en base)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Le panier:
+Panier automatiquement actualisé et gestion d'erreur de chargement en affichant un bouton pour actualiser
+Si 2 personnes sont connectés sur le même compte, actualisation possible en tirant vers le bas
+
