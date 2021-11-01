@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 
 class PagePanier extends StatefulWidget {
@@ -41,23 +42,11 @@ class _PagePanierState extends State<PagePanier> {
                   appBar: AppBar(
                     title: const Text("MIAGED"),
                   ),
-                  body: Center(
-                    child: Container(
-                      height: 120,
-                      width: 250,
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: TextButton(
-                        onPressed: () {
-                          setState(() {});
-                        },
-                        child: const Text(
-                          'Cliquez pour actualiser',
-                          style: TextStyle(color: Colors.white, fontSize: 25),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                  body: const Center(
+                    child: Text(
+                      'Votre panier est vide',
+                      style: TextStyle(color: Colors.black, fontSize: 30),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 );

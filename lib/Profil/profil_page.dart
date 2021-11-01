@@ -117,8 +117,7 @@ class _PageProfilState extends State<PageProfil> {
                     onPressed: () {
                       databaseReference
                           .collection("Users")
-                          .doc(widget.login)
-                          .set({
+                          .doc(widget.login).update({
                         'login': widget.login,
                         'mdp': _mdpController.text,
                         'ville': _villeController.text,
