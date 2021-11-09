@@ -1,10 +1,12 @@
 # Projet MIAGEDv1.3
 
 Réalisé dans le cadre du master 2 Intense (2021-2022) par François Hardy
+Le MVP est 100 % fonctionnel et a été réalisé comme indiqué.
+Le code suit une architecture et ai commenté.
 
-# Fonctionnalités
+# Fonctionnalités supplémentaires
 
-De manière général, une attention à été appliquée sur la gestion des erreurs (login/mdp), en cas de manque d'informations sur les profils ou des vêtements.
+De manière générale, une attention a été appliquée sur la gestion des erreurs et en cas de manque d'informations sur les profils ou des vêtements.
 
 ## Les différentes pages
 
@@ -39,7 +41,7 @@ De manière général, une attention à été appliquée sur la gestion des erre
   
 - Fonctionnalités
     - Une gestion des informations manquantes dans les produits (voir le produit "Echarpe")
-    - Un bouton d'action, permettant d'ajouter un vetement (implementation manquante: ajout en base)
+    - Un bouton d'action, permettant d'ajouter un vetement (implementation manquante : ajout en base)
 
 ### Page du panier
 
@@ -48,7 +50,7 @@ De manière général, une attention à été appliquée sur la gestion des erre
   
 - Fonctionnalités
   - Panier automatiquement actualisé et gestion d'erreur de chargement en affichant un bouton pour actualiser
-  - Si 2 personnes sont connectés sur le même compte, actualisation possible en tirant vers le bas
+  - Si deux personnes sont connectées sur le même compte, actualisation possible en tirant vers le bas
 
 ### Page du profil
 
