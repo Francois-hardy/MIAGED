@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:projet/Connexion/login_page.dart';
 
 class PageProfil extends StatefulWidget {
-  PageProfil({Key? key, required this.login}) : super(key: key);
+  const PageProfil({Key? key, required this.login}) : super(key: key);
 
   final String login;
 
@@ -73,7 +73,7 @@ class _PageProfilState extends State<PageProfil> {
                       labelStyle: TextStyle(fontWeight: FontWeight.bold)),
                       onTap: () async{
                         DateTime date = DateTime(1900);
-                        FocusScope.of(context).requestFocus(new FocusNode());
+                        FocusScope.of(context).requestFocus(FocusNode());
 
                         date = (await showDatePicker(
                             context: context,
@@ -154,7 +154,7 @@ class _PageProfilState extends State<PageProfil> {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const LoginFormValidation()),
+                                  const Login()),
                           ModalRoute.withName("/LoginFormValidation"));
                     },
                     child: const Text(

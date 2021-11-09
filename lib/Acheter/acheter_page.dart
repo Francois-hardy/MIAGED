@@ -2,12 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:projet/vetement.dart';
+import 'package:projet/Acheter/vetement_page.dart';
 
-import 'ajouter_page.dart';
 
 class PageAcheter extends StatefulWidget {
-  PageAcheter({Key? key, required this.login}) : super(key: key);
+  const PageAcheter({Key? key, required this.login}) : super(key: key);
 
   final String login;
 
@@ -24,11 +23,11 @@ class _PageAcheterState extends State<PageAcheter> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Document does not exist");
         }
 
         String prix = "Inconnu";
@@ -57,11 +56,11 @@ class _PageAcheterState extends State<PageAcheter> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Document does not exist");
         }
 
         String taille = "Inconnu";
@@ -90,11 +89,11 @@ class _PageAcheterState extends State<PageAcheter> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Document does not exist");
         }
 
         String image =
@@ -125,11 +124,11 @@ class _PageAcheterState extends State<PageAcheter> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Document does not exist");
         }
 
         List<String> listeTous = [];
@@ -156,9 +155,6 @@ class _PageAcheterState extends State<PageAcheter> {
                 listeBas.add(data[i.toString()].split(':')[0].trim());
               }
             }
-            print(listeTous);
-            print(listeHaut);
-            print(listeBas);
           }
           final _formKey = GlobalKey<FormState>();
           return DefaultTabController(

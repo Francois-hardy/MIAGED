@@ -19,11 +19,11 @@ class Vetement extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String marque = "Inconnu";
@@ -52,11 +52,11 @@ class Vetement extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String prix = "Inconnu";
@@ -66,7 +66,6 @@ class Vetement extends StatelessWidget {
           if (data['prix'] != null) {
             prix = data['prix'] + " €";
             prixVetement = int.parse(data['prix']);
-            print("Prix vetement = $prixVetement");
           }
         }
 
@@ -87,11 +86,11 @@ class Vetement extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String taille = "Inconnu";
@@ -119,11 +118,11 @@ class Vetement extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         Color enabledColor = Colors.blue;
@@ -149,7 +148,6 @@ class Vetement extends StatelessWidget {
           catch (e){
 
           }
-
         }
 
         return Container(
@@ -206,11 +204,11 @@ class Vetement extends StatelessWidget {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String image =
@@ -230,7 +228,7 @@ class Vetement extends StatelessWidget {
             ),
             body: Center(
                 child: Column(children: <Widget>[
-              Container(
+              SizedBox(
                   height: 300,
                   width: 300,
                   child: Image.network(

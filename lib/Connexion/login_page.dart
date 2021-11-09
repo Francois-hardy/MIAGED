@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:projet/Connexion/register_page.dart';
-import '../home_page.dart';
+import '../Controller/controller.dart';
 
 final databaseReference = FirebaseFirestore.instance;
 
-class LoginFormValidation extends StatefulWidget {
-  const LoginFormValidation({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  _LoginFormValidationState createState() => _LoginFormValidationState();
+  _LoginState createState() => _LoginState();
 }
 
-class _LoginFormValidationState extends State<LoginFormValidation> {
+class _LoginState extends State<Login> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -142,7 +142,6 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                         .listen((event) {
                       try {
                         if (event.get("mdp") == _passwordController.text) {
-                          print("Validated");
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
@@ -151,7 +150,6 @@ class _LoginFormValidationState extends State<LoginFormValidation> {
                               ModalRoute.withName("/MyApp"));
                         }
                       } catch (e) {
-                        print("Not Validated");
                         showDialog(
                           context: context,
                           builder: (BuildContext context) =>

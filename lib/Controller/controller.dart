@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Acheter/acheter_page.dart';
-import 'Profil/profil_page.dart';
-import 'Panier/panier_page.dart';
+import '../Acheter/acheter_page.dart';
+import '../Profil/profil_page.dart';
+import '../Panier/panier_page.dart';
 
 class Accueil extends StatefulWidget {
   Accueil({Key? key, required this.login}) : super(key: key);

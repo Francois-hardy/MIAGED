@@ -8,6 +8,9 @@ Le MVP est 100% fonctionnel
 
 Voici la liste de ce qui a été ajouté :
 
+En général :
+Gestion des erreurs (login/mdp), manque d'informations sur les profils ou vetements
+
 Le bouton "Mot de passe oublié", qui n'est pas développé, affiche seulement une pop-up
 Des cadres pour le login/mot de passe
 Une vérification de ce que l'utilisateur a entré (limitation de caractères)
