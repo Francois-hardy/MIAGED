@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:projet/connexion_page/login_page.dart';
+import 'package:projet/Connexion/login_page.dart';
 
 class PageProfil extends StatefulWidget {
   PageProfil({Key? key, required this.login}) : super(key: key);

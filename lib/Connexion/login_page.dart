@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:projet/connexion_page/register_page.dart';
+import 'package:projet/Connexion/register_page.dart';
 import '../home_page.dart';
 
 final databaseReference = FirebaseFirestore.instance;

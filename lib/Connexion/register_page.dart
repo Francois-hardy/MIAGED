@@ -13,11 +13,11 @@ class Register extends StatefulWidget {
   _Register createState() => _Register();
 }
 
+/// Classe pour l'inscription
 class _Register extends State<Register> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
   final _password1Controller = TextEditingController();
-  final _password2Controller = TextEditingController();
   final _villeController = TextEditingController();
   final _cpController = TextEditingController();
   final _addrController = TextEditingController();
@@ -35,14 +35,14 @@ class _Register extends State<Register> {
     }
   }
 
-  Widget _buildPopupWrongCredentials(BuildContext context) {
+  Widget _buildPopup(BuildContext context, String titre, String message) {
     return AlertDialog(
-      title: const Text('Erreur'),
+      title: Text(titre),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          Text("Les identifiants sont incorrects"),
+        children: <Widget>[
+          Text(message),
         ],
       ),
       actions: <Widget>[
@@ -57,35 +57,41 @@ class _Register extends State<Register> {
     );
   }
 
+  /// Build principal
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("MIAGED"),
+        title: const Text("MIAGED"), //titre du scaffold
       ),
       body: SingleChildScrollView(
         child: Form(
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          //check for validation while typing
+          //on regarde la validation pendant l'ecriture
           key: formkey,
           child: Column(
+            //colonne de widget
             children: <Widget>[
               const SizedBox(
+                //box vide
                 width: 200,
                 height: 20,
               ),
               const Text(
+                //texte
                 "Inscription",
                 textAlign: TextAlign.center,
                 textScaleFactor: 3.0,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               const SizedBox(
+                //box vide
                 width: 200,
                 height: 30,
               ),
               Padding(
+                //login
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextFormField(
                     controller: _usernameController,
@@ -94,10 +100,11 @@ class _Register extends State<Register> {
                         labelText: 'Login',
                         hintText: 'Entrer un login valide'),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "* Obligatoire"),
+                      RequiredValidator(errorText: "* Obligatoire"), //champ obligatoire
                     ])),
               ),
               Padding(
+                //mot de passe
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
@@ -119,7 +126,8 @@ class _Register extends State<Register> {
                     //validatePassword,        //Function to check validation
                     ),
               ),
-              Padding( //addr
+              Padding(
+                //adresse
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
@@ -129,18 +137,15 @@ class _Register extends State<Register> {
                         labelText: 'Adresse',
                         hintText: 'Enrer votre adresse'),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "* Obligatoire"),
-                      MinLengthValidator(6,
-                          errorText:
-                          "L'adresse doit contenir au moins 6 caractères"),
                       MaxLengthValidator(40,
                           errorText:
-                          "L'adresse ne doit pas dépasser 40 caractères")
+                              "L'adresse ne doit pas dépasser 40 caractères")
                     ])
-                  //validatePassword,        //Function to check validation
-                ),
+                    //validatePassword,        //Function to check validation
+                    ),
               ),
-              Padding( //anniv
+              Padding(
+                //anniversaire
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
@@ -149,20 +154,22 @@ class _Register extends State<Register> {
                         border: OutlineInputBorder(),
                         labelText: 'Date de naissance',
                         hintText: 'Enrer votre date de naissance'),
-                    onTap: () async{
+                    onTap: () async {
                       DateTime date = DateTime(1900);
-                      FocusScope.of(context).requestFocus(new FocusNode());
+                      FocusScope.of(context).requestFocus(FocusNode());
 
                       date = (await showDatePicker(
                           context: context,
-                          initialDate:DateTime.now(),
-                          firstDate:DateTime(1900),
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(1900),
                           lastDate: DateTime(2025)))!;
 
-                      _annivController.text = date.toIso8601String().substring(0, 10);}
-                ),
+                      _annivController.text =
+                          date.toIso8601String().substring(0, 10);
+                    }),
               ),
-              Padding( //ville
+              Padding(
+                //ville
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
@@ -172,18 +179,15 @@ class _Register extends State<Register> {
                         labelText: 'Ville',
                         hintText: 'Enrer votre ville'),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "* Obligatoire"),
-                      MinLengthValidator(2,
-                          errorText:
-                          "La ville doit contenir au moins 2 caractères"),
                       MaxLengthValidator(15,
                           errorText:
-                          "La ville ne doit pas dépasser 15 caractères")
+                              "La ville ne doit pas dépasser 15 caractères")
                     ])
-                  //validatePassword,        //Function to check validation
-                ),
+                    //validatePassword,        //Function to check validation
+                    ),
               ),
-              Padding( //cp
+              Padding(
+                //cp
                 padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 child: TextFormField(
@@ -194,16 +198,12 @@ class _Register extends State<Register> {
                         labelText: 'Code postal',
                         hintText: 'Enrer votre code postal'),
                     validator: MultiValidator([
-                      RequiredValidator(errorText: "* Obligatoire"),
-                      MinLengthValidator(4,
-                          errorText:
-                          "Le mot de passe doit contenir au moins 4 caractères"),
                       MaxLengthValidator(15,
                           errorText:
-                          "Le mot de passe ne doit pas dépasser 10 caractères")
+                              "Le mot de passe ne doit pas dépasser 10 caractères")
                     ])
-                  //validatePassword,        //Function to check validation
-                ),
+                    //validatePassword,        //Function to check validation
+                    ),
               ),
               const SizedBox(
                 width: 200,
@@ -217,33 +217,45 @@ class _Register extends State<Register> {
                     borderRadius: BorderRadius.circular(20)),
                 child: TextButton(
                   onPressed: () async {
-
                     Map<String, dynamic> regionData = <String, dynamic>{};
-                    regionData["login"] = _usernameController.text;
+                    if (_usernameController.text.isNotEmpty && _usernameController.text.length > 6){
+                      regionData["login"] = _usernameController.text;
 
-                    DocumentReference currentRegion =
-                    FirebaseFirestore.instance.collection("Users").doc(_usernameController.text);
+                      DocumentReference currentRegion = FirebaseFirestore.instance
+                          .collection("Users")
+                          .doc(_usernameController.text);
 
-                    FirebaseFirestore.instance.runTransaction((transaction) async {
-                      transaction.set(currentRegion, regionData);
-                      print("instance created");
-                    });
-                    await FirebaseFirestore.instance
-                        .collection("Users")
-                        .doc(_usernameController.text)
-                        .update({
-                      'login': _usernameController.text,
-                      "mdp": _password1Controller.text,
-                      "addr": _addrController.text,
-                      "anniv": _annivController.text,
-                      "cp": _cpController.text,
-                      "ville": _villeController.text,
-                    });
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Accueil(login: _usernameController.text)),
-                        ModalRoute.withName("/MyApp"));
+                      FirebaseFirestore.instance
+                          .runTransaction((transaction) async {
+                        transaction.set(currentRegion, regionData);
+                      });
+                      await FirebaseFirestore.instance
+                          .collection("Users")
+                          .doc(_usernameController.text)
+                          .update({
+                        'login': _usernameController.text,
+                        "mdp": _password1Controller.text,
+                        "addr": _addrController.text,
+                        "anniv": _annivController.text,
+                        "cp": _cpController.text,
+                        "ville": _villeController.text,
+                      });
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Accueil(login: _usernameController.text)),
+                          ModalRoute.withName("/MyApp"));
+                    }
+                    else{
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) =>
+                            _buildPopup(context, "Erreur", "Veuillez entrer un login et mot de passe valide"),
+                      );
+
+                    }
+
                   },
                   child: const Text(
                     'S' 'inscrire',
