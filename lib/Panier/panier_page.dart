@@ -24,11 +24,11 @@ class _PagePanierState extends State<PagePanier> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         if (snapshot.connectionState == ConnectionState.done) {
@@ -37,7 +37,6 @@ class _PagePanierState extends State<PagePanier> {
             data = snapshot.data!.data() as Map<String, dynamic>;
             try {
               if (data["panier"].isEmpty || data["panier"] == null) {
-                print("Panier vide");
                 return Scaffold(
                   appBar: AppBar(
                     title: const Text("MIAGED"),
@@ -186,11 +185,11 @@ class _PagePanierState extends State<PagePanier> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         var prix = 0;
@@ -202,7 +201,7 @@ class _PagePanierState extends State<PagePanier> {
           }
         }
         return Text(
-          "Total : ${prix} €",
+          "Total : $prix €",
           textScaleFactor: 1.7,
         );
       },
@@ -217,11 +216,11 @@ class _PagePanierState extends State<PagePanier> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String prix = "Inconnu";
@@ -252,11 +251,11 @@ class _PagePanierState extends State<PagePanier> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
         String taille = "Inconnu";
         Map<String, dynamic> data = {};
@@ -284,11 +283,11 @@ class _PagePanierState extends State<PagePanier> {
       builder:
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
         if (snapshot.hasError) {
-          return const Text("Something went wrong");
+          return const Text("Erreur de connexion");
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
         String image =
             "https://cdn.dribbble.com/users/1186261/screenshots/3718681/_______.gif";
@@ -335,7 +334,6 @@ class _PagePanierState extends State<PagePanier> {
             if (prix != null) {
               prixInt = prix;
             }
-            print(prixInt.toSigned(10));
 
             FirebaseFirestore.instance
                 .collection("Users")

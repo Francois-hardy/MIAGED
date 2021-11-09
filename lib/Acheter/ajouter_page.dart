@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Test extends StatefulWidget {
+class AjoutVetement extends StatefulWidget {
+  const AjoutVetement({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<Test> {
+class _MyAppState extends State<AjoutVetement> {
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter"),
+        title: const Text("Ajouter un vetement"),
       ),
       body: Center(
         child: ElevatedButton(
@@ -42,17 +44,17 @@ class _MyAppState extends State<Test> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: TextFormField(),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(),
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: RaisedButton(
-                                  child: Text("Submitß"),
+                                child: TextFormField(),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: ElevatedButton(
+                                  child: const Text("Valider"),
                                   onPressed: () {
                                     if (_formKey.currentState!.validate()) {
                                       _formKey.currentState!.save();
@@ -68,7 +70,7 @@ class _MyAppState extends State<Test> {
                   );
                 });
           },
-          child: Text("Open Popup"),
+          child: const Text("Chargement..."),
         ),
       ),
     );

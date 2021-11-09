@@ -146,7 +146,7 @@ class Vetement extends StatelessWidget {
             }
           }
           catch (e){
-
+            return const Text("Erreur");
           }
         }
 

@@ -6,7 +6,7 @@ import '../Profil/profil_page.dart';
 import '../Panier/panier_page.dart';
 
 class Accueil extends StatefulWidget {
-  Accueil({Key? key, required this.login}) : super(key: key);
+  const Accueil({Key? key, required this.login}) : super(key: key);
 
   final String login;
 

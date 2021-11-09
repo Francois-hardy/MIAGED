@@ -27,7 +27,7 @@ class _PageAcheterState extends State<PageAcheter> {
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return const Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String prix = "Inconnu";
@@ -60,7 +60,7 @@ class _PageAcheterState extends State<PageAcheter> {
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return const Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String taille = "Inconnu";
@@ -93,7 +93,7 @@ class _PageAcheterState extends State<PageAcheter> {
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return const Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         String image =
@@ -128,7 +128,7 @@ class _PageAcheterState extends State<PageAcheter> {
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
-          return const Text("Document does not exist");
+          return const Text("Le document n'existe pas");
         }
 
         List<String> listeTous = [];
