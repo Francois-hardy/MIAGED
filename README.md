@@ -1,6 +1,6 @@
 # Projet MIAGEDv1.3
 
-Réalisé dans le cadre du master 2 Intense (2021-2022) par François Hardy
+Réalisé dans le cadre du Master 2 Intense (2021-2022) par François Hardy
 Le MVP est 100 % fonctionnel et a été réalisé comme indiqué.
 Le code suit une architecture et ai commenté.
 
@@ -55,7 +55,9 @@ De manière générale, une attention a été appliquée sur la gestion des erre
 ### Page du profil
 
 - Design
-  - A completer
+  - Cadres dynamiques
   
 - Fonctionnalités
-  - A completer
+  - Gestion des erreurs
+  - Affichage d'un message d'actualisation
+  - Calendrier pour la date
